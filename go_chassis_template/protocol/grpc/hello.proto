@@ -1,0 +1,21 @@
+syntax = "proto2";
+
+package template_proto;
+
+import "header.proto";
+
+service HelloService {
+  rpc Hello(HelloReq) returns (HelloRes) {}
+}
+
+message HelloReq {
+  required ReqHeader header = 1;
+  required string hello_str = 2;
+}
+
+
+message HelloRes {
+  required RespHeader header = 1;
+  required string hello_res_str = 2;
+}
+

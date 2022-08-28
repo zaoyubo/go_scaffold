@@ -1,0 +1,20 @@
+syntax = "proto2";
+
+package template_proto;
+
+
+
+message ReqHeader {
+  required string request_id = 1;  // id
+  required string token = 2;  // 认证token
+  required uint32 timestamp = 3;  // 时间戳
+  required uint32 nonce = 4;  // 随机数
+  required uint32 sign = 5;  // 签名
+}
+
+
+message RespHeader {
+  required string request_id = 1;  // 请求id
+  required int32 retcode = 2;  // 返回码
+  required string message = 3;  // 提示信息
+}
