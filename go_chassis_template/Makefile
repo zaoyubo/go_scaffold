@@ -11,8 +11,8 @@ lint:
 	fi
 	golangci-lint run -v    --skip-dirs="vendor" --skip-files "_test\.go" --exclude unused,sa1012,asmdecl,S1004,SA5008,SA1029  ./...
 
-#pb:
-#	docker run --rm -it  -v $(PWD):$(PWD) -w $(PWD) image_name make proto
+pb:
+	docker run --rm -it  -v $(PWD):$(PWD) -w $(PWD) go_scaffold:v1 make proto
 
 run_grpc:
 	CHASSIS_HOME=$(PWD) CHASSIS_CONF_DIR=$(PWD)/conf/grpc go run cmd/grpc/main.go
